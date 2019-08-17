@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <title>Mars is Awesome</title>
+    <style>
+        img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+    </style>
+    </head>
+<body style = "margin-left: .5%; margin-right: .5%;">
+    <div class="container text-center jumbotron" style = "max-width: 99%;">
+        <h1>Mission to Mars</h1>
+        <a href="/scrape"><button type = "button" class = "btn btn-primary">Scrape</button></a>
+    </div>
+    <div class = "row">
+        <div class = "col">
+            <h3>Latest Mars News</h3>
+            <h5>{{ mars.top_headline }}</h5>
+            <p>{{ mars.top_article }}</p>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col-8">
+            <h3>Featured Mars Image</h3>
+            <img src =  {{ mars.featured_image }} style = "width: fit-content; max-width: 66%;">
+        </div>
+        <div class = "col-4">
+            <div class = "container" style = "border: 1px solid gray;">
+                <h3>Current Weather on Mars</h3>
+                <p> {{ mars.Current_weather }} </p>
+            </div>
+            <h5>Mars Facts</h5>
+            <div class = "container">{{ mars.Mars_facts | safe }}</div>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col-6" style = "border: 1px solid gray;">
+            <img src = {{ mars.img_1_url }} style = "width: fit-content; max-width: 50%;" >
+            <h3> {{ mars.img_1_title }} </h3>
+        </div>
+        <div class = "col-6" style = "border: 1px solid gray;">
+            <img src =  {{mars.img_2_url}}  style = "width: fit-content; max-width: 50%;">
+            <h3> {{ mars.img_2_title }} </h3>
+        </div>
+    </div>
+    <div class = "row">
+            <div class = "col-6" style = "border: 1px solid gray;">
+                <img src = {{mars.img_3_url}} style = "width: fit-content; max-width: 50%;" >
+                <h3> {{ mars.img_3_title }} </h3>    
+            </div>
+            <div class = "col-6" style = "border: 1px solid gray;">
+                <img src = {{ mars.img_4_url }} style = "width: fit-content; max-width: 50%;" >
+                <h3> {{ mars.img_4_title }} </h3>    
+            </div>
+    </div>
+</body>
+</html>
